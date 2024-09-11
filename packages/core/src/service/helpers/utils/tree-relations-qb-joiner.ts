@@ -1,6 +1,6 @@
 import { EntityMetadata, FindOneOptions, SelectQueryBuilder } from 'typeorm';
 import { EntityTarget } from 'typeorm/common/EntityTarget';
-import { DriverUtils } from 'typeorm/driver/DriverUtils';
+import { FindOptionsRelationByString, FindOptionsRelations } from 'typeorm/find-options/FindOptionsRelations';
 
 import { findOptionsObjectToArray } from '../../../connection/find-options-object-to-array';
 import { VendureEntity } from '../../../entity';
@@ -108,12 +108,7 @@ export function joinTreeRelationsDynamically<T extends VendureEntity>(
         if (relationMetadata.isEager) {
             joinConnector = '__';
         }
-        const nextAlias = DriverUtils.buildAlias(
-            qb.connection.driver,
-            { shorten: false },
-            currentAlias,
-            part.replace(/\./g, '_'),
-        );
+        const nextAlias = `${currentAlias}${joinConnector}${part.replace(/\./g, '_')}`;
         const nextPath = parts.join('.');
         const fullPath = [...(parentPath || []), part].join('.');
         if (!qb.expressionMap.joinAttributes.some(ja => ja.alias.name === nextAlias)) {
