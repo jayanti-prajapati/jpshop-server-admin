@@ -42,5 +42,6 @@
         "picocolors": "^1.0.0",
         "semver": "^7.5.4",
         "tcp-port-used": "^1.0.2"
-    }
+    },
+    "gitHead": "17e0bcfc6031eb9f1b01d96728bb83c5787f39fc"
 }

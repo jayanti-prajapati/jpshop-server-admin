@@ -113,5 +113,6 @@
         "puppeteer": "^19.8.3",
         "rimraf": "^5.0.5",
         "typescript": "5.3.3"
-    }
+    },
+    "gitHead": "17e0bcfc6031eb9f1b01d96728bb83c5787f39fc"
 }

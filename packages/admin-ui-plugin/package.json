@@ -31,5 +31,6 @@
     "dependencies": {
         "date-fns": "^2.30.0",
         "fs-extra": "^11.2.0"
-    }
+    },
+    "gitHead": "17e0bcfc6031eb9f1b01d96728bb83c5787f39fc"
 }
